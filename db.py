@@ -57,6 +57,7 @@ def deposit_summary_query(conn):
         return curr.fetchall()
     except Error as e:
         print(e)
+        return []
 
 
 def max_min_deposit_query(conn):
@@ -71,6 +72,7 @@ def max_min_deposit_query(conn):
         return curr.fetchone()
     except Error as e:
         print(e)
+        return []
 
 
 def initialize_database():
@@ -101,6 +103,7 @@ def initialize_database():
                      )
     else:
         print("Error! cannot create the database connection.")
+        return
 
     # create accounts
     customers = [
